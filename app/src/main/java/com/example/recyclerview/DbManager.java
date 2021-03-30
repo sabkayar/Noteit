@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ public class DbManager {
     private Context context;
     private NoteModel model;
     private SQLiteDatabase database;
+    private static final String TAG=DbManager.class.getSimpleName();
 
     public DbManager (Context c){
         context = c;
@@ -49,7 +51,8 @@ public class DbManager {
         return i;
     }
     public void delete(NoteModel model){
-        database.delete(DataBaseHelper.TABLE_NAME,DataBaseHelper._ID + "=?",new String[]{String.valueOf(model.getID())});
+        int rows=database.delete(DataBaseHelper.TABLE_NAME,DataBaseHelper._ID + "=?",new String[]{String.valueOf(model.getID())});
+        Log.d(TAG,"Number of rows Affected : "+rows);
 //        dbHelper.close();
     }
 

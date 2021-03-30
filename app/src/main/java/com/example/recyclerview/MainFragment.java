@@ -93,12 +93,12 @@ public class MainFragment extends Fragment implements MyClickListeners {
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             Log.d("xyz----", "Inside onSwipe()");
-          int position = (int) adopter.getItemId(viewHolder.getAdapterPosition());
+          int position = (int) viewHolder.getAdapterPosition();
           switch (direction){
               case ItemTouchHelper.LEFT:
                   Log.d("xyz----", "ItemTouchHelper.LEFT "+position+1);
 
-                  dbManager.delete(model);
+                  dbManager.delete(arrayList.get(position));
                //   arrayList.remove(position-1);
                   adopter.notifyItemRemoved(viewHolder.getAdapterPosition());
                   displayNotes();

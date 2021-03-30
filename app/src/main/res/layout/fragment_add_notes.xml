@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNotes"
+    android:background="#FFFF00">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_view"
+            android:text="Add Note"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/add_note"
+            android:textSize="15dp"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write a note">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/cancel_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_note"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="70dp"
+            android:text="CANCEL"
+            android:textSize="15dp">
+
+        </Button>
+        <Button
+            android:id="@+id/ok_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="15dp"
+            android:layout_toRightOf="@+id/cancel_note"
+            android:layout_below="@+id/add_note"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="130dp">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+
+
+</FrameLayout>
